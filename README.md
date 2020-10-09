@@ -52,3 +52,13 @@ and you can find the results for `TTbar` (*in update...*) events with `<PU> = 40
 ![miniaod_file_evt](https://raw.githubusercontent.com/AdrianoDee/warehouse/master/img/miniaod_file_evt.png)
 
 
+### Samples locations
+
+|          | location                                                    | events                            | config                            |
+|----------|:-----------------------------------------------------------:|:---------------------------------:|:---------------------------------:|
+| dstar    | /eos/cms/store/group/phys_bphys/miniaodstudies/dstar/       |              ~90k                 |   DStarToD0Pi_D0KPi_DStarFilter   |
+| --       |                                                             |                                   |                                   |
+| --       |                                                             |                                   |                                   |
+| --       |                                                             |                                   |                                   |
+
+
