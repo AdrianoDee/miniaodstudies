@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: Configuration/GenProduction/python/BsToJpsiPhi.py --conditions auto:phase1_2021_realistic -n 5000 --era Run3 --eventcontent FEVTDEBUG --relval 9000,50 -s GEN,SIM --datatier GEN-SIM --beamspot Realistic25ns13TeVEarly2017Collision --geometry DB:Extended --fileout file:step1.root --no_exec --nThreads 8
+# with command line options: Configuration/GenProduction/python/BsToJpsiPhi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV --conditions auto:phase1_2021_realistic -n 5000 --era Run3 --eventcontent FEVTDEBUG --relval 9000,50 -s GEN,SIM --datatier GEN-SIM --beamspot Realistic25ns13TeVEarly2017Collision --geometry DB:Extended --fileout file:step1.root --no_exec --nThreads 8
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run3_cff import Run3
@@ -13,6 +13,7 @@ process = cms.Process('SIM',Run3)
 process.load('Configuration.StandardSequences.Services_cff')
 process.load('SimGeneral.HepPDTESSource.pythiapdt_cfi')
 process.load('FWCore.MessageService.MessageLogger_cfi')
+#process.load('HeterogeneousCore.CUDAServices.CUDAService_cfi')
 process.load('Configuration.EventContent.EventContent_cff')
 process.load('SimGeneral.MixingModule.mixNoPU_cfi')
 process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
@@ -25,50 +26,19 @@ process.load('Configuration.StandardSequences.SimIdeal_cff')
 process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
-T=4
-
-process.options.numberOfThreads=cms.untracked.uint32(T)
-process.options.numberOfStreams=cms.untracked.uint32(T)
-
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(50000),
-    output = cms.optional.untracked.allowed(cms.int32,cms.PSet)
+    input = cms.untracked.int32(500)
 )
 
 # Input source
 process.source = cms.Source("EmptySource")
 
 process.options = cms.untracked.PSet(
-    FailPath = cms.untracked.vstring(),
-    IgnoreCompletely = cms.untracked.vstring(),
-    Rethrow = cms.untracked.vstring(),
-    SkipEvent = cms.untracked.vstring(),
-    allowUnscheduled = cms.obsolete.untracked.bool,
-    canDeleteEarly = cms.untracked.vstring(),
-    emptyRunLumiMode = cms.obsolete.untracked.string,
-    eventSetup = cms.untracked.PSet(
-        forceNumberOfConcurrentIOVs = cms.untracked.PSet(
 
-        ),
-        numberOfConcurrentIOVs = cms.untracked.uint32(1)
-    ),
-    fileMode = cms.untracked.string('FULLMERGE'),
-    forceEventSetupCacheClearOnNewRun = cms.untracked.bool(False),
-    makeTriggerResults = cms.obsolete.untracked.bool,
-    numberOfConcurrentLuminosityBlocks = cms.untracked.uint32(1),
-    numberOfConcurrentRuns = cms.untracked.uint32(1),
-    numberOfStreams = cms.untracked.uint32(0),
-    numberOfThreads = cms.untracked.uint32(1),
-    printDependencies = cms.untracked.bool(False),
-    sizeOfStackForThreadsInKB = cms.optional.untracked.uint32,
-    throwIfIllegalParameter = cms.untracked.bool(True),
-    wantSummary = cms.untracked.bool(False)
 )
 
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
-    annotation = cms.untracked.string('Spring 2015: Pythia8+EvtGen130 generation of Bs --> J/psi phi, 13TeV, Tune CUETP8M1'),
-    name = cms.untracked.string('$Source: Configuration/Generator/python/PYTHIA8_BsJpsiPhi_EtaPtFilter_CUEP8M1_13TeV_cff.py $'),
     version = cms.untracked.string('$Revision: 1.1 $')
 )
 
@@ -95,18 +65,6 @@ process.genstepfilter.triggerConditions=cms.vstring("generation_step")
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:phase1_2021_realistic', '')
 
-process.jpsifilter = cms.EDFilter("PythiaDauVFilter",
-    DaughterIDs = cms.untracked.vint32(13, -13),
-    MaxEta = cms.untracked.vdouble(2.5, 2.5),
-    MinEta = cms.untracked.vdouble(-2.5, -2.5),
-    MinPt = cms.untracked.vdouble(2.5, 2.5),
-    MotherID = cms.untracked.int32(531),
-    NumberDaughters = cms.untracked.int32(2),
-    ParticleID = cms.untracked.int32(443),
-    verbose = cms.untracked.int32(1)
-)
-
-
 process.bfilter = cms.EDFilter("PythiaFilter",
     MaxEta = cms.untracked.double(9999.0),
     MinEta = cms.untracked.double(-9999.0),
@@ -129,13 +87,13 @@ process.phifilter = cms.EDFilter("PythiaDauVFilter",
 process.generator = cms.EDFilter("Pythia8GeneratorFilter",
     ExternalDecays = cms.PSet(
         EvtGen130 = cms.untracked.PSet(
-            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2010.DEC'),
+            decay_table = cms.string('GeneratorInterface/EvtGenInterface/data/DECAY_2010_NOLONGLIFE.DEC'),
             list_forced_decays = cms.vstring(
                 'MyB_s0', 
                 'Myanti-B_s0'
             ),
-            particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt_Bmm.pdl'),
-            user_decay_file = cms.vstring('GeneratorInterface/EvtGenInterface/data/Bs_JpsiPhi_V3.dec')
+            particle_property_file = cms.FileInPath('GeneratorInterface/EvtGenInterface/data/evt.pdl'),
+            user_decay_file = cms.vstring('GeneratorInterface/ExternalDecays/data/Bs_JpsiPhi_V3.dec')
         ),
         operates_on_particles = cms.vint32(),
         parameterSets = cms.vstring('EvtGen130')
@@ -143,11 +101,14 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
     PythiaParameters = cms.PSet(
         parameterSets = cms.vstring(
             'pythia8CommonSettings', 
-            'pythia8CUEP8M1Settings', 
+            'pythia8CP5Settings', 
             'processParameters'
         ),
         processParameters = cms.vstring(
             'SoftQCD:nonDiffractive = on', 
+            'PTFilter:filter = on', 
+            'PTFilter:quarkToFilter = 5', 
+            'PTFilter:scaleToFilter = 1.0', 
             '300553:new = 300553 -300553 1 0 0 1.0579400e+01 2.0500001e-02 10.5584 10.6819 0.0000000e+00', 
             '100313:new = 100313 -100313 1 0 0 1.4140000e+00 2.3199996e-01 0.254 2.574 0.0000000e+00', 
             '100323:new = 100323 -100323 1 1 0 1.4140000e+00 2.3199996e-01 0.254 2.574 0.0000000e+00', 
@@ -183,12 +144,25 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
             '3216:new = 3216 -3216 2.5 0 0 1.7750000e+00 1.1999999e-01 1.175 2.375 0.0000000e+00', 
             '14124:new = 14124 -14124 2.5 1 0 2.626600 0 2.626600 2.626600 0.0000000e+00'
         ),
-        pythia8CUEP8M1Settings = cms.vstring(
+        pythia8CP5Settings = cms.vstring(
             'Tune:pp 14', 
             'Tune:ee 7', 
-            'MultipartonInteractions:pT0Ref=2.4024', 
-            'MultipartonInteractions:ecmPow=0.25208', 
-            'MultipartonInteractions:expPow=1.6'
+            'MultipartonInteractions:ecmPow=0.03344', 
+            'PDF:pSet=20', 
+            'MultipartonInteractions:bProfile=2', 
+            'MultipartonInteractions:pT0Ref=1.41', 
+            'MultipartonInteractions:coreRadius=0.7634', 
+            'MultipartonInteractions:coreFraction=0.63', 
+            'ColourReconnection:range=5.176', 
+            'SigmaTotal:zeroAXB=off', 
+            'SpaceShower:alphaSorder=2', 
+            'SpaceShower:alphaSvalue=0.118', 
+            'SigmaProcess:alphaSvalue=0.118', 
+            'SigmaProcess:alphaSorder=2', 
+            'MultipartonInteractions:alphaSvalue=0.118', 
+            'MultipartonInteractions:alphaSorder=2', 
+            'TimeShower:alphaSorder=2', 
+            'TimeShower:alphaSvalue=0.118'
         ),
         pythia8CommonSettings = cms.vstring(
             'Tune:preferLHAPDF = 2', 
@@ -211,6 +185,18 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
 )
 
 
+process.jpsifilter = cms.EDFilter("PythiaDauVFilter",
+    DaughterIDs = cms.untracked.vint32(13, -13),
+    MaxEta = cms.untracked.vdouble(2.5, 2.5),
+    MinEta = cms.untracked.vdouble(-2.5, -2.5),
+    MinPt = cms.untracked.vdouble(2.5, 2.5),
+    MotherID = cms.untracked.int32(531),
+    NumberDaughters = cms.untracked.int32(2),
+    ParticleID = cms.untracked.int32(443),
+    verbose = cms.untracked.int32(1)
+)
+
+
 process.ProductionFilterSequence = cms.Sequence(process.generator+process.bfilter+process.jpsifilter+process.phifilter)
 
 # Path and EndPath definitions
@@ -226,9 +212,9 @@ from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
 associatePatAlgosToolsTask(process)
 
 #Setup FWK for multithreaded
-process.options.numberOfThreads=cms.untracked.uint32(4)
-process.options.numberOfStreams=cms.untracked.uint32(4)
-process.options.numberOfConcurrentLuminosityBlocks=cms.untracked.uint32(1)
+#process.options.numberOfThreads=cms.untracked.uint32(4)
+#process.options.numberOfStreams=cms.untracked.uint32(4)
+#process.options.numberOfConcurrentLuminosityBlocks=cms.untracked.uint32(1)
 # filter all path with the production filter sequence
 for path in process.paths:
 	getattr(process,path).insert(0, process.ProductionFilterSequence)
