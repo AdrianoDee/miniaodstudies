@@ -21,8 +21,12 @@ git cms-merge-topic adrianodee:miniaodsizes
 scram b -j 8
 ```
 
-and then you will be able to run the MINIAOD step (such as the ones stored in `configs/` directory) and adding a line as
+and then you will be able to run the MINIAOD step (such as the ones stored in `configs/` directory) and adding a couple of lines as
 
+```
+process.packedPFCandidates.minPtForTrackProperties = x
+process.packedPFCandidates.minPtForLowQualityTrackProperties = cms.double(0.1)
+```
 
 will allow you to tune the reduced precion covariance matrix pT threhsold. For a preliminary study the configuration that have been taken into account are
 
@@ -32,6 +36,8 @@ will allow you to tune the reduced precion covariance matrix pT threhsold. For a
 | v0       |         0.1 GeV         |              inf (*)              |
 | v1       |         0.5 GeV         |              0.3 GeV              |
 | v2       |         0.3 GeV         |              0.1 GeV              |
+
+###### (*)in this case this threshold doesn't have any effect
 
 and you can find the results for `TTbar` (*in update...*) events with `<PU> = 40,45,50,55,60,65` in the notebook `Sizes`. Here some examples of the results.
 
