@@ -54,6 +54,8 @@ and you can find the results for `TTbar` (*in update...*) events with `<PU> = 40
 
 ### Sample locations
 
+All the samples have been produced with 11_2_0_pre6 and GT 'auto:phase1_2021_realistic’ (i.e. 112X_mcRun3_2021_realistic_v7)
+
 |           | location                                                    | events                            | config                            |
 |-----------|:-----------------------------------------------------------:|:---------------------------------:|:---------------------------------:|
 | dstar     | /eos/cms/store/group/phys_bphys/miniaodstudies/dstar/       |              ~90k                 |   [DStarToD0Pi_D0KPi_DStarFilter](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/DStarToD0Pi_D0KPi_DStarFilter_13TeV_GEN_SIM.py)   |
