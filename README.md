@@ -54,11 +54,11 @@ and you can find the results for `TTbar` (*in update...*) events with `<PU> = 40
 
 ### Samples locations
 
-|          | location                                                    | events                            | config                            |
-|----------|:-----------------------------------------------------------:|:---------------------------------:|:---------------------------------:|
-| dstar    | /eos/cms/store/group/phys_bphys/miniaodstudies/dstar/       |              ~90k                 |   DStarToD0Pi_D0KPi_DStarFilter   |
-| --       |                                                             |                                   |                                   |
-| --       |                                                             |                                   |                                   |
-| --       |                                                             |                                   |                                   |
+|           | location                                                    | events                            | config                            |
+|-----------|:-----------------------------------------------------------:|:---------------------------------:|:---------------------------------:|
+| dstar     | /eos/cms/store/group/phys_bphys/miniaodstudies/dstar/       |              ~90k                 |   [DStarToD0Pi_D0KPi_DStarFilter](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/DStarToD0Pi_D0KPi_DStarFilter_13TeV_GEN_SIM.py)   |
+| bsjpsiphi | /eos/cms/store/group/phys_bphys/miniaodstudies/bsjpsiphi/   |              ~50k                 |             [BsToJpsiPhi](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/BsToJpsiPhi_GEN_SIM.py)           |
+| qcd_muon  | /eos/cms/store/group/phys_bphys/miniaodstudies/qcd_muon/    |              ~60k                 |             [QCD](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/QCD_GEN_SIM.py)                      |
+| --        |                                                             |                                   |                                   |
 
 
