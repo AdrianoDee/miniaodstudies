@@ -52,7 +52,7 @@ and you can find the results for `TTbar` (*in update...*) events with `<PU> = 40
 ![miniaod_file_evt](https://raw.githubusercontent.com/AdrianoDee/warehouse/master/img/miniaod_file_evt.png)
 
 
-### Samples locations
+### Sample locations
 
 |           | location                                                    | events                            | config                            |
 |-----------|:-----------------------------------------------------------:|:---------------------------------:|:---------------------------------:|
