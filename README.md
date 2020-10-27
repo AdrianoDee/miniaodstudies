@@ -34,7 +34,7 @@ will allow you to tune the reduced precion covariance matrix pT threhsold. For a
 |----------|:-----------------------:|:---------------------------------:|
 | Original |         0.95 GeV        |              0.5 GeV              |
 | v0       |         0.1 GeV         |              inf (*)              |
-| v1       |         0.5 GeV         |              0.3 GeV              |
+| v1       |         0.5 GeV         |              0.1 GeV              |
 | v2       |         0.3 GeV         |              0.1 GeV              |
 
 ###### (*)in this case this threshold doesn't have any effect
