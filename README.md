@@ -32,10 +32,13 @@ will allow you to tune the reduced precion covariance matrix pT threhsold. For a
 
 |          | minPtForTrackProperties | minPtForLowQualityTrackProperties |
 |----------|:-----------------------:|:---------------------------------:|
-| Original |         0.95 GeV        |              0.5 GeV              |
-| v0       |         0.1 GeV         |              inf (*)              |
-| v1       |         0.5 GeV         |              0.1 GeV              |
-| v2       |         0.3 GeV         |              0.1 GeV              |
+| Original |         0.95 GeV        |              0.50 GeV             |
+| v0       |         0.10 GeV        |              inf (*)              |
+| v1       |         0.50 GeV        |              0.10 GeV             |
+| v2       |         0.30 GeV        |              0.10 GeV             |
+| v3       |         0.95 GeV        |              0.00 GeV             |
+| v4       |         0.00 GeV        |              inf (*)              |
+| v5       |         0.50 GeV        |              0.25 GeV             |
 
 ###### (*)in this case this threshold doesn't have any effect
 
