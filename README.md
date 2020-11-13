@@ -51,8 +51,6 @@ and you can find the results for `TTbar` (*in update...*) events with `<PU> = 40
 #### MiniAOD Relative (to orginal) File Size
 ![miniaod_file_rel](https://raw.githubusercontent.com/AdrianoDee/warehouse/master/img/miniaod_file_rel.png)
 
-#### File Size per Event
-![miniaod_file_evt](https://raw.githubusercontent.com/AdrianoDee/warehouse/master/img/miniaod_file_evt.png)
 
 
 ### Sample locations
