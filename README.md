@@ -66,3 +66,18 @@ All the samples have been produced with 11_2_0_pre6 and GT 'auto:phase1_2021_rea
 | bupsik         | /eos/cms/store/group/phys_bphys/miniaodstudies/bupsik/         |              ~30k                 |             [BuPsiK](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/BuToPsi2SK_Psi2SToJpsiPiPi_BMuonFilter_DGamma0_TuneCP5_13TeV_GEN_SIM.py)                     |
 | xilambda       | /eos/cms/store/group/phys_bphys/miniaodstudies/xi/            |              ~50k                 |             [Xi](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/XiMinus_13TeV_GEN_SIM.py)                     |
 
+
+## Checking the LUT
+
+In order to check the LUT for the covariance you may merge https://github.com/AdrianoDee/cmssw/tree/miniaodbph branch in your CMSSW
+
+```
+cmsrel CMSSW_11_2_0_pre6
+cd CMSSW_11_2_0_pre6/src/
+git cms-init
+git cms-merge-topic adrianodee:miniaodbph
+git cms-checkdeps -a 
+scram b -j 8
+```
+
+This would allow you to access the covariance matrix (for the `pseudoTrack` of the `PackedCandidate`) even when `hasTrackDetails()` is `false`.
