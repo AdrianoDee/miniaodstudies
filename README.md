@@ -80,4 +80,4 @@ git cms-checkdeps -a
 scram b -j 8
 ```
 
-This would allow you to access the covariance matrix (for the `pseudoTrack` of the `PackedCandidate`) even when `hasTrackDetails()` is `false`.
+This would allow you to access the covariance matrix (for the `pseudoTrack` of the `PackedCandidate`) even when `hasTrackDetails()` is `false` and the track is attached to the candidate. In order to get the track reference in this setup check before the `covarianceVersion` to be `==1` (or simply `>0`) with the method `covarianceVersion()`from [here](https://github.com/AdrianoDee/cmssw/blob/miniaodbph/DataFormats/PatCandidates/interface/PackedCandidate.h#L672) and then get the `reco::Track` with the method `pseudoTrack()` from [here](https://github.com/AdrianoDee/cmssw/blob/miniaodbph/DataFormats/PatCandidates/interface/PackedCandidate.h#L773).
