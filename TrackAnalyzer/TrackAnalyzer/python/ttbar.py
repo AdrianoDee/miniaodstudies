@@ -1,0 +1,7 @@
+"file:/home/adrianodif/miniaodbph/local_mini/ttbar_40/miniaod_0_0_-1.root",
+"file:/home/adrianodif/miniaodbph/local_mini/ttbar_40/miniaod_1_0_-1.root",
+"file:/home/adrianodif/miniaodbph/local_mini/ttbar_40/miniaod_2_0_-1.root",
+"file:/home/adrianodif/miniaodbph/local_mini/ttbar_40/miniaod_3_0_-1.root",
+"file:/home/adrianodif/miniaodbph/local_mini/ttbar_40/miniaod_4_0_-1.root",
+"file:/home/adrianodif/miniaodbph/local_mini/ttbar_40/miniaod_5_0_-1.root",
+"file:/home/adrianodif/miniaodbph/local_mini/ttbar_40/miniaod_original_0_-1.root",
