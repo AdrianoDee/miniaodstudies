@@ -1,8 +1,10 @@
 from CondCore.CondDB.CondDB_cfi import *
 
 def customize_alignment(process):
+        
         process.load("CondCore.DBCommon.CondDBCommon_cfi")
         process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+        
         import CalibTracker.Configuration.Common.PoolDBESSource_cfi
 
         process.GlobalTag.toGet = cms.VPSet(
@@ -14,7 +16,6 @@ def customize_alignment(process):
                                                                                  tag = cms.string("TrackerAlignmentExtendedErrors_BPIX50_FPIX50_TIB20_TOB20_TID40_TEC40"),
                                                                                  connect = cms.string("frontier://FrontierProd/CMS_CONDITIONS"),),
                                            )
-        return process
 
 def customize_failures(process,scen="d"):
 
@@ -34,4 +35,3 @@ def customize_failures(process,scen="d"):
 
         process.es_prefer_Quality = cms.ESPrefer("PoolDBESSource","SiPixelQualityDBReader")
 
-        return process
