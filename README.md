@@ -16,6 +16,7 @@ To be able to run with it merge the topic in your local repo
 ```
 cmsrel CMSSW_11_2_0_pre6
 cd CMSSW_11_2_0_pre6/src/
+cmsenv
 git cms-init
 git cms-merge-topic adrianodee:miniaodsizes
 scram b -j 8
@@ -69,14 +70,26 @@ All the samples have been produced with 11_2_0_pre6 and GT 'auto:phase1_2021_rea
 
 ## Checking the LUT
 
-In order to check the LUT for the covariance you may merge https://github.com/AdrianoDee/cmssw/tree/miniaodbph branch in your CMSSW
+In order to check the LUT for the covariance you may merge https://github.com/AdrianoDee/cmssw/tree/miniaodbph branch in your CMSSW (11_2_X)
 
 ```
 cmsrel CMSSW_11_2_0_pre6
 cd CMSSW_11_2_0_pre6/src/
+cmsenv
 git cms-init
 git cms-merge-topic adrianodee:miniaodbph
 git cms-checkdeps -a 
+scram b -j 8
+```
+
+or (in 11_3_X)
+
+```
+cmsrel CMSSW_11_3_0_pre2
+cd CMSSW_11_2_0_pre2/src/
+cmsenv
+git cms-init
+git cms-merge-topic adrianodee:miniaodbph-113
 scram b -j 8
 ```
 
