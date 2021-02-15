@@ -92,21 +92,21 @@ Under `/eos/cms/store/group/phys_tracking/run3_miniaod/` you may find `BuToPsiK`
 | bu     | 2021 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2021/        | 61k    |
 |        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2021_failC/  | 61k    |
 |        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2021_failD/  | 60k    |
-|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2021/        | 78k    |
+|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2021_align/        | 78k    |
 |        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2024/        | 57k    |
 |        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2024_failC/  | 75k    |
 |        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2024_failD/  | 54k    |
 | psi    | 2021 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2021/       |        |
 |        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2021_failC/ |        |
 |        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2021_failD/ |        |
-|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2021/       |        |
+|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2021_align/       |        |
 |        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024/       |        |
 |        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024_failC/ |        |
 |        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024_failD/ |        |
 | bu     | 2021 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021/        |        |
 |        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_failC/  |        |
 |        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_failD/  |        |
-|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021/        |        |
+|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_align/        |        |
 |        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024/        |        |
 |        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024_failC/  |        |
 |        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024_failD/  |        |
