@@ -86,7 +86,7 @@ or (in 11_3_X)
 
 ```
 cmsrel CMSSW_11_3_0_pre2
-cd CMSSW_11_2_0_pre2/src/
+cd CMSSW_11_3_0_pre2/src/
 cmsenv
 git cms-init
 git cms-merge-topic adrianodee:miniaodbph-113
