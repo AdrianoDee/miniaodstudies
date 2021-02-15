@@ -81,3 +81,56 @@ scram b -j 8
 ```
 
 This would allow you to access the covariance matrix (for the `pseudoTrack` of the `PackedCandidate`) even when `hasTrackDetails()` is `false` and the track is attached to the candidate. In order to get the track reference in this setup check before the `covarianceVersion` to be `==1` (or simply `>0`) with the method `covarianceVersion()`from [here](https://github.com/AdrianoDee/cmssw/blob/miniaodbph/DataFormats/PatCandidates/interface/PackedCandidate.h#L672) and then get the `reco::Track` with the method `pseudoTrack()` from [here](https://github.com/AdrianoDee/cmssw/blob/miniaodbph/DataFormats/PatCandidates/interface/PackedCandidate.h#L773).
+
+
+### Multiple conditions samples
+
+Under `/eos/cms/store/group/phys_tracking/run3_miniaod/` you may find `BuToPsiK`, `PsiToJPsiPiPi` and `DStarToD0Pi` samples for multiple conditions
+
+| Sample | Year | Scenario  | Path                                                            | Events |
+|--------|------|-----------|-----------------------------------------------------------------|--------|
+| bu     | 2021 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2021/        | 61k    |
+|        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2021_failC/  | 61k    |
+|        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2021_failD/  | 60k    |
+|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2021/        | 78k    |
+|        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2024/        | 57k    |
+|        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2024_failC/  | 75k    |
+|        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/bu/2024_failD/  | 54k    |
+| psi    | 2021 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2021/       |        |
+|        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2021_failC/ |        |
+|        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2021_failD/ |        |
+|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2021/       |        |
+|        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024/       |        |
+|        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024_failC/ |        |
+|        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024_failD/ |        |
+| bu     | 2021 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021/        |        |
+|        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_failC/  |        |
+|        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_failD/  |        |
+|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021/        |        |
+|        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024/        |        |
+|        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024_failC/  |        |
+|        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024_failD/  |        |
+
+#### Baseline 2021/2024 conditions
+
+* __2021__ :  113X_mcRun3_2021_realistic_v2
+
+* __2024__ : 113X_mcRun3_2024_realistic_v2
+
+#### Failures & Mis-align
+
+To apply the failures & mis-alignment scenarios use one (or both) the customizers in [customize_failures.py](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/customize_failures.py). To apply one of the pixel failures scenarios listed [here](https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiPixelPhase1FailureScenarios#Failure_Scenario_studies_in_2018) use:
+
+```
+from customize_failures import *
+customize_failures(process,S)
+```
+
+with `S=A,B,C,D,E,F,G or H`. In the samples listed above `S` is set to `C` and `D`
+
+To use the misalignment simulation scenario use
+
+```
+from customize_failures import *
+customize_alignment(process)
+```
