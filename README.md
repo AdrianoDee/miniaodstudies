@@ -117,7 +117,7 @@ Under `/eos/cms/store/group/phys_tracking/run3_miniaod/` you may find `BuToPsiK`
 |        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024_failC/ | 178k   |
 |        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024_failD/ | 87k    |
 | ds     | 2021 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021/        | 92k    |
-|        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_failC/  | 30k    |
+|        |      | fail2018C | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_failC/  | 105k   |
 |        |      | fail2018D | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_failD/  | 130k   |
 |        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_align/  | 210k   |
 |        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024/        | 45k    |
