@@ -60,12 +60,12 @@ All the samples have been produced with 11_2_0_pre6 and GT 'auto:phase1_2021_rea
 
 |                | location                                                      | events                            | config                            |
 |----------------|:-------------------------------------------------------------:|:---------------------------------:|:---------------------------------:|
-| dstar (pT>3.9) | /eos/cms/store/group/phys_bphys/miniaodstudies/dstar/         |              ~90k                 |   [DStarToD0Pi_D0KPi_pT3p9](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/DStarToD0Pi_D0KPi_DStarFilter_13TeV_GEN_SIM.py)   |
-| dstar (pT>0.5) | /eos/cms/store/group/phys_bphys/miniaodstudies/dstar_lowpt/   |              ~50k                 |   [DStarToD0Pi_D0Kpi_pT0p5](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/DStarToD0Pi_D0KPi_DStarFilter_13TeV_LowPt_GEN_SIM.py)
-| bsjpsiphi      | /eos/cms/store/group/phys_bphys/miniaodstudies/bsjpsiphi/     |              ~50k                 |             [BsToJpsiPhi](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/BsToJpsiPhi_GEN_SIM.py)           |
-| qcd_muon       | /eos/cms/store/group/phys_bphys/miniaodstudies/qcd_muon/      |              ~60k                 |             [QCD](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/QCD_GEN_SIM.py)                      |
-| bupsik         | /eos/cms/store/group/phys_bphys/miniaodstudies/bupsik/         |              ~30k                 |             [BuPsiK](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/BuToPsi2SK_Psi2SToJpsiPiPi_BMuonFilter_DGamma0_TuneCP5_13TeV_GEN_SIM.py)                     |
-| xilambda       | /eos/cms/store/group/phys_bphys/miniaodstudies/xi/            |              ~50k                 |             [Xi](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/XiMinus_13TeV_GEN_SIM.py)                     |
+| dstar (pT>3.9) | /eos/cms/store/group/phys_tracking/bphstudies/miniaodstudies/dstar/         |              ~90k                 |   [DStarToD0Pi_D0KPi_pT3p9](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/DStarToD0Pi_D0KPi_DStarFilter_13TeV_GEN_SIM.py)   |
+| dstar (pT>0.5) | /eos/cms/store/group/phys_tracking/bphstudies/miniaodstudies/dstar_lowpt/   |              ~50k                 |   [DStarToD0Pi_D0Kpi_pT0p5](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/DStarToD0Pi_D0KPi_DStarFilter_13TeV_LowPt_GEN_SIM.py)
+| bsjpsiphi      | /eos/cms/store/group/phys_tracking/bphstudies/miniaodstudies/bsjpsiphi/     |              ~50k                 |             [BsToJpsiPhi](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/BsToJpsiPhi_GEN_SIM.py)           |
+| qcd_muon       | /eos/cms/store/group/phys_tracking/bphstudies/miniaodstudies/qcd_muon/      |              ~60k                 |             [QCD](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/QCD_GEN_SIM.py)                      |
+| bupsik         | /eos/cms/store/group/phys_tracking/bphstudies/miniaodstudies/bupsik/         |              ~30k                 |             [BuPsiK](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/BuToPsi2SK_Psi2SToJpsiPiPi_BMuonFilter_DGamma0_TuneCP5_13TeV_GEN_SIM.py)                     |
+| xilambda       | /eos/cms/store/group/phys_tracking/bphstudies/miniaodstudies/xi/            |              ~50k                 |             [Xi](https://github.com/AdrianoDee/miniaodstudies/blob/main/configs/XiMinus_13TeV_GEN_SIM.py)                     |
 
 
 ## Checking the LUT
@@ -116,13 +116,11 @@ Under `/eos/cms/store/group/phys_tracking/run3_miniaod/` you may find `BuToPsiK`
 |        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024/       | 110k   |
 |        |      | 2018_failC | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024_failC/ | 178k   |
 |        |      | 2018_failD | /eos/cms/store/group/phys_tracking/run3_miniaod/psi/2024_failD/ | 87k    |
-| ds     | 2021 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021/        | 92k    |
-|        |      | 2018_failC | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_failC/  | 105k   |
-|        |      | 2018_failD | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_failD/  | 130k   |
-|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2021_align/  | 210k   |
-|        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024/        | 45k    |
-|        |      | 2018_failC | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024_failC/  | 110k   |
-|        |      | 2018_failD | /eos/cms/store/group/phys_tracking/run3_miniaod/ds/2024_failD/  | 190k   |
+| ds     | 2021 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds_lowpt/2021/        | 180k    |
+|        |      | 2018_failD | /eos/cms/store/group/phys_tracking/run3_miniaod/ds_lowpt/2021_failD/  | 115k   |
+|        |      | mis-align | /eos/cms/store/group/phys_tracking/run3_miniaod/ds_lowpt/2021_align/  | 210k   |
+|        | 2024 | baseline  | /eos/cms/store/group/phys_tracking/run3_miniaod/ds_lowpt/2024/        | 250k    |
+|        |      | 2018_failD | /eos/cms/store/group/phys_tracking/run3_miniaod/ds_lowpt/2024_failD/  | 100k   |
 
 #### Baseline 2021/2024 conditions
 
