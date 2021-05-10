@@ -30,10 +30,10 @@ sites = ['T2_AT_Vienna', 'T2_BE_IIHE', 'T2_BE_UCL', 'T2_BR_SPRACE', 'T2_BR_UERJ'
 
 
 NJOBS = 250
-EVTPERJOB = 50
+EVTPERJOB = 480
 
 nEvents = NJOBS*EVTPERJOB
-genname = 'TTbar_14TeV_TuneCP5' 
+genname = 'BuToPsi2SK_Psi2SToJpsiPiPi_LowPt'
 
 job_label = genname + "_PUFlat55To75"
 myrun= genname + '_GEN_SIM.py'
@@ -45,6 +45,9 @@ step3File = "step3_inAODSIM.root"
 mini0 = "miniaod_0.root"
 mini1 = "miniaod_1.root"
 mini2 = "miniaod_2.root"
+mini3 = "miniaod_3.root"
+mini4 = "miniaod_4.root"
+mini5 = "miniaor_5.root"
 miniO = "miniaod_original.root"
 
 
@@ -55,16 +58,16 @@ config.General.workArea = 'crab_projects'
 
 config.JobType.pluginName = 'PrivateMC'
 config.JobType.psetName = myrun
-config.JobType.inputFiles = [myrun,'step2.py','release.tar','step3.py','miniaod_0.py','miniaod_1.py','miniaod_original.py','miniaod_2.py']
+config.JobType.inputFiles = [myrun,'step2.py','release.tar','step3.py','miniaod_0.py','miniaod_1.py','miniaod_original.py','miniaod_2.py','miniaod_3.py','miniaod_4.py','miniaod_5.py']
 config.JobType.disableAutomaticOutputCollection = True
 config.JobType.eventsPerLumi = 1000
 config.JobType.numCores = 4
 config.JobType.maxMemoryMB      = 9000
-config.JobType.maxJobRuntimeMin = 180 #int(float(EVTPERJOB)*2.5)
+config.JobType.maxJobRuntimeMin = 220 #int(float(EVTPERJOB)*2.5)
 config.JobType.allowUndistributedCMSSW = True
 config.JobType.scriptExe = 'production.sh'#'GEN-MiniAOD-Xb2chib1pipi_10p5.sh'
 #config.JobType.scriptArgs = ['=Xb2chib1pipi','=10p5','=100000']
-config.JobType.outputFiles = [step3File,mini0,mini1,mini2,miniO]
+config.JobType.outputFiles = [step3File,mini0,mini1,mini2,miniO,mini3,mini4,mini5]
 
 config.Data.outputPrimaryDataset = myname
 config.Data.splitting = 'EventBased'
@@ -74,7 +77,7 @@ config.Data.totalUnits = nEvents
 config.Data.outLFNDirBase = '/store/user/adiflori/MiniAODStrudies/'# % (getUsernameFromSiteDB())
 #config.Data.outputDatasetTag = 'RunIISummer17PrePremix-MC_v2_94X_mc2017_realistic_v11'+step
 #config.Data.publishDBS = 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter/'
-config.Data.publication = True
+config.Data.publication = False
 #config.Data.inputDBS = 'phys03'
 config.Data.publishDBS = 'phys03'
 
